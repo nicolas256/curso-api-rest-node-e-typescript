@@ -1,12 +1,12 @@
 import express from 'express';
+import 'dotenv/config';
+import './shared/services/TranslationsYup';
+import {router} from './routes';
 
 const server = express();
 
 
-/*interface Teste {
-
-}*/
-
-server.get('/', (req, res) => { return res.send('Olá, Dev!'); });
+server.use(express.json());
+server.use(router);
 
 export { server };
